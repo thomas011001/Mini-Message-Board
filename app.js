@@ -5,6 +5,7 @@ const app = express();
 const {
   getAllMessages,
   createMessage,
+  getOneMessage,
 } = require("./controllers/messageController");
 
 require("dotenv").config();
@@ -19,6 +20,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.get("/", getAllMessages);
+app.get("/message/:id", getOneMessage);
+app.get("/new", (req, res) => res.render("new"));
 app.post("/new", createMessage);
 
 app.listen(PORT, () => console.log("started the server on: " + PORT));
