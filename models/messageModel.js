@@ -17,8 +17,7 @@ const messages = [
 
 const getAll = async () => messages;
 
-const getById = async (id) =>
-  messages.find((item) => toString(item.id) == toString(id));
+const getById = async (id) => messages.find((item) => item.id === id);
 
 const addMessage = async (text, user, date) => {
   const message = { id: uuidv4(), text, user, added: new Date(date) };
