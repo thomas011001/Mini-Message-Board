@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/output.css" />
     <title>Message Board!</title>
   </head>
-  <body>
+  <body class="px-3">
     <div class="max-w-[800px] mx-auto">
       <%- include('nav', {link: {text: "Add new message", path: "/new"}}) %>
       <ul class="flex flex-col gap-5">
@@ -16,7 +16,10 @@
             <span class="font-bold"><%= message.user %>:</span>
             <%= message.text %>
           </div>
-          <div class="font-light text-sm"><%= message.added %></div>
+          <div class="font-light text-sm">
+            <%= message.added.toLocaleDateString("en-GB", { day: "2-digit",
+            month: "long", year: "numeric" })%>
+          </div>
           <a
             href="/message/<%= message.id %>"
             class="text-blue-600 hover:underline decoration-blue-600"

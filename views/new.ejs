@@ -7,7 +7,7 @@
 
     <title>Document</title>
   </head>
-  <body>
+  <body class="px-3">
     <div class="max-w-[800px] mx-auto">
       <%- include('nav', {link: {text: "Back to messages", path: "/"}}) %>
 
@@ -25,7 +25,6 @@
         <label class="flex flex-col gap-2">
           User:
           <input
-            required
             type="text"
             name="user"
             placeholder="user"
