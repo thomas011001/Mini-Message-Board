@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <title>Message Board!</title>
+  </head>
+  <body>
+    <form action="/new" method="POST">
+      <input type="text" name="user" placeholder="user" />
+      <input type="text" name="text" placeholder="text" />
+      <input type="date" name="date" />
+      <input type="submit" />
+    </form>
+    <ul>
+      <% messages.map((message) => { %>
+      <li><%= message.text %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
