@@ -16,6 +16,12 @@
         method="POST"
         class="border-[1px] border-black p-3 flex flex-col gap-2"
       >
+        <% if (error) { %>
+        <div class="bg-red-200 rounded border-[1px] border-red-700 p-3">
+          <p class="text-red-700"><%= error %></p>
+        </div>
+        <% } %>
+
         <label class="flex flex-col gap-2">
           User:
           <input
