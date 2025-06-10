@@ -15,4 +15,11 @@ const createMessage = async (req, res) => {
   res.redirect("/");
 };
 
-module.exports = { getAllMessages, createMessage };
+const getOneMessage = async (req, res) => {
+  const id = req.params.id;
+  const myMessage = await message.getById(id);
+  // res.send(myMessage);
+  res.render("message", { message: myMessage });
+};
+
+module.exports = { getAllMessages, createMessage, getOneMessage };
