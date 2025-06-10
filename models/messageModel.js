@@ -17,10 +17,11 @@ const messages = [
 
 const getAll = async () => messages;
 
-const getById = async (id) => messages.filter((item) => item.id == id)[0];
+const getById = async (id) =>
+  messages.find((item) => toString(item.id) == toString(id));
 
 const addMessage = async (text, user, date) => {
-  const message = { id: uuidv4(), text, user, date: new Date(date) };
+  const message = { id: uuidv4(), text, user, added: new Date(date) };
 
   messages.push(message);
 };
