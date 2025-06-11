@@ -25,4 +25,4 @@ const addMessage = async (text, user, date) => {
   messages.push(message);
 };
 
-export { getAll, getById, addMessage };
+module.exports = { getAll, getById, addMessage };
